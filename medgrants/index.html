@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MedGrants — Sponsorship & Grants Management</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="app">
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <!-- Acceleration Point Logo SVG -->
+      <div id="apLogoBlock" style="margin-bottom:14px">
+        <svg width="160" height="38" viewBox="0 0 160 38" xmlns="http://www.w3.org/2000/svg">
+          <!-- Orange ring icon -->
+          <circle cx="18" cy="19" r="15" fill="none" stroke="#F57C20" stroke-width="4"/>
+          <circle cx="18" cy="19" r="5" fill="#F57C20"/>
+          <!-- "acceleration" text -->
+          <text x="40" y="17" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="0.02em">acceleration</text>
+          <!-- "point" text -->
+          <text x="40" y="32" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#F57C20" letter-spacing="0.02em">point</text>
+        </svg>
+      </div>
+      <div style="height:1px;background:rgba(255,255,255,0.1);margin-bottom:12px"></div>
+      <div class="product-name" id="brandProduct">MedGrants</div>
+      <div class="product-sub">Sponsorship &amp; Grants Management</div>
+    </div>
+    <div class="role-switcher">
+      <label>Viewing as</label>
+      <select id="roleSelect" onchange="setRole(this.value)">
+        <option value="requester">Requester (MSL)</option>
+        <option value="budget">Budget Owner</option>
+        <option value="medical">Medical Reviewer</option>
+        <option value="legal">Legal / Compliance</option>
+        <option value="admin">Admin / Leadership</option>
+      </select>
+    </div>
+    <nav class="nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <div class="ap-credit" id="sidebarCredit">Powered by Acceleration Point<br>accelerationpoint.com</div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <h1 id="topbarTitle">Dashboard</h1>
+      <div class="topbar-right">
+        <span class="topbar-badge" id="topbarRole">Requester (MSL)</span>
+        <button class="btn sm primary" id="topbarNewBtn" onclick="showView('submit')" style="display:none">+ New Request</button>
+      </div>
+    </div>
+    <div class="content" id="mainContent"></div>
+  </div>
+</div>
+<div class="overlay" id="overlay" onclick="closeDetail()"></div>
+<div class="detail-panel" id="detailPanel"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
